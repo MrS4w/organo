@@ -5,16 +5,6 @@ import TextField from "../TextField";
 import "./Form.css";
 
 const Form = (props) => {
-  const times = [
-    "Programação",
-    "Front-End",
-    "Data Science",
-    "Devops",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
-
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
@@ -61,8 +51,9 @@ const Form = (props) => {
         />
 
         <Dropdown
+          label="Time"
           obrigatorio={true}
-          itens={times}
+          itens={props.times}
           valor={time}
           handleChange={(valor) => setTime(valor)}
         />
