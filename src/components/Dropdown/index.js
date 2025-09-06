@@ -9,6 +9,7 @@ const Dropdown = (props) => {
         value={props.valor}
         onChange={(event) => props.handleChange(event.target.value)}
       >
+        <option value=""></option>
         {props.itens.map((item) => (
           <option key={item}>{item}</option>
         ))}

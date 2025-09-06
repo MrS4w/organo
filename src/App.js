@@ -23,6 +23,7 @@ function App() {
 
   const onRegisterColaborator = (colaborator) => {
     console.log("Colaborador registrado:", colaborator);
+    debugger;
     setColaboradores([...colaboradores, colaborator]);
   };
 
