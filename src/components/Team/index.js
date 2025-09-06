@@ -1,3 +1,4 @@
+import Colaborator from "../Colaborator";
 import "./Team.css";
 
 const Team = (props) => {
@@ -6,9 +7,20 @@ const Team = (props) => {
   };
 
   return (
-    <section className="team" style={sectionStyle}>
-      <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
-    </section>
+    props.colaboradores.length > 0 && (
+      <section className="team" style={sectionStyle}>
+        <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
+        <div className="colaboradores">
+          {props.colaboradores.map((colaborador) => (
+            <Colaborator
+              nome={colaborador.nome}
+              cargo={colaborador.cargo}
+              imagem={colaborador.imagem}
+            />
+          ))}
+        </div>
+      </section>
+    )
   );
 };
 
